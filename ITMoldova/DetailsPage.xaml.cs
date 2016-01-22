@@ -1,4 +1,4 @@
-﻿using ITMoldova.NewsParsing;
+﻿using ITMUtils.NewsParsing;
 using System;
 using System.Collections.Generic;
 using System.IO;

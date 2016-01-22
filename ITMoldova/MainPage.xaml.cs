@@ -13,7 +13,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using ITMoldova.NewsParsing;
+using ITMUtils.NewsParsing;
 using Windows.Storage;
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -25,7 +25,7 @@ namespace ITMoldova
     public sealed partial class MainPage : Page
     {
         Frame rootFrame = Window.Current.Content as Frame;
-
+        
         public MainPage()
         {
             this.InitializeComponent();
