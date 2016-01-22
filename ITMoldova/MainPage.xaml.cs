@@ -42,7 +42,7 @@ namespace ITMoldova
         {
             if (News.Items.Count==0)
             {
-                News.ItemsSource = await Parser.GetTitles();
+                News.ItemsSource = await Parser.GetFeedData();
                 Loader.IsActive = false;
             }
         }
@@ -70,7 +70,7 @@ namespace ITMoldova
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
             Loader.IsActive = true;
-            News.ItemsSource = await Parser.GetTitles();
+            News.ItemsSource = await Parser.GetFeedData();
             Loader.IsActive = false;
         }
 
@@ -92,8 +92,7 @@ namespace ITMoldova
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            string x = "hello";
-            rootFrame.Navigate(typeof(SettingsPage),x);
+            rootFrame.Navigate(typeof(SettingsPage));
         }
     }
 }
