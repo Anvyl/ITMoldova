@@ -60,7 +60,6 @@ namespace ITMUtils.NewsParsing
             {
                 result[count++].Author = "Autor: " + item.NextSibling.NextSibling.InnerText;
             }
-            
             return result;
         }
     }
