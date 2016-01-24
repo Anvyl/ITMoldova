@@ -53,12 +53,9 @@ namespace ITMUtils.NewsParsing
             count = 0;
             foreach (IXmlNode item in nodes)
             {
-                result[count++].PublishDate = DateTime.Parse(item.InnerText).ToLocalTime();
-            }
-            count = 0;
-            foreach (IXmlNode item in nodes)
-            {
-                result[count++].Author = "Autor: " + item.NextSibling.NextSibling.InnerText;
+                result[count].PublishDate = DateTime.Parse(item.InnerText).ToLocalTime();
+                result[count].Author = "Autor: " + item.NextSibling.NextSibling.InnerText;
+                count++;
             }
             return result;
         }
