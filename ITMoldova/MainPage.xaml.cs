@@ -70,6 +70,7 @@ namespace ITMoldova
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
             Loader.IsActive = true;
+            
             News.ItemsSource = await Parser.GetFeedData();
             Loader.IsActive = false;
         }
