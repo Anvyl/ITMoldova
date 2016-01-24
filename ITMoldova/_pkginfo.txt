@@ -1,1 +1,1 @@
-C:\Users\balan\Documents\Visual Studio 2015\Projects\App14\ITMoldova\AppPackages\ITMoldova_2.1.1.0\ITMoldova_2.1.1.0_x86_x64_arm.appxbundle
+C:\Users\balan\Documents\GitHub\ITMoldova\ITMoldova\AppPackages\ITMoldova_2.1.4.0\ITMoldova_2.1.4.0_x86_x64_arm.appxbundle

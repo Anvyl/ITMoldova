@@ -148,11 +148,30 @@
                 <RowDefinition Height="50"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
             <ProgressRing Grid.Row="0" x:Name="Loader" IsActive="True" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center"/>
             <Image Source="http://itmoldova.com/wp-content/uploads/2015/01/power-itmold-54cb37e4v1_site_icon-32x32.png" Width="32" Height="32" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Center" Grid.Row="0"></Image>
-            <TextBlock Text="ITMoldova" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20" FontWeight="Bold" Margin="40,0,0,0" FontFamily="{ThemeResource PhoneFontFamilyNormal}"/>
-            <Rectangle Grid.Row="1" Fill="Black" Opacity="0.1"></Rectangle>
+            <TextBlock Text="ITMoldova" x:Name="LogoText" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20" FontWeight="Bold" Margin="40,0,0,0" FontFamily="{ThemeResource PhoneFontFamilyNormal}"/>
+            <Grid Grid.Row="0" Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBox Text="" Grid.Column="0" Height="25" Visibility="Collapsed" Background="White" Margin="40,0,10,0" x:Name="SearchBox" HorizontalAlignment="Stretch" InputScope="SearchIncremental" PlaceholderText="Search">
+                    <TextBox.Transitions>
+                        <TransitionCollection>
+                            <AddDeleteThemeTransition/>
+                        </TransitionCollection>
+                    </TextBox.Transitions>
+                </TextBox>
+                <Button Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <SymbolIcon Symbol="Find"></SymbolIcon>
+                </Button>
+                
+            </Grid>
             <ListView SelectionChanged="News_SelectionChanged" Grid.Row="1" x:Name="News">
                 <ListView.Transitions>
                     <TransitionCollection>
@@ -211,6 +230,14 @@
                                 </StackPanel>
                             </Button>
                             <TextBlock Text="Save Locally" Foreground="White" HorizontalAlignment="Right" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Button Style="{StaticResource HamStyle}" Background="{StaticResource SystemControlBackgroundAccentBrush}" Width="50" Height="50" Click="SearchClicked">
+                                <StackPanel Orientation="Horizontal">
+                                    <SymbolIcon Symbol="Find" Foreground="White"/>
+                                </StackPanel>
+                            </Button>
+                            <TextBlock Text="Searc" Foreground="White" HorizontalAlignment="Right" Margin="10,0,0,0" VerticalAlignment="Center"/>
                         </StackPanel>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom">

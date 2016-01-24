@@ -6,6 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.Data.Xml.Dom;
 using System.Text.RegularExpressions;
+using Windows.Storage;
+using Windows.UI.Popups;
+using Newtonsoft.Json;
 
 namespace ITMUtils.NewsParsing
 {
@@ -53,14 +56,23 @@ namespace ITMUtils.NewsParsing
             count = 0;
             foreach (IXmlNode item in nodes)
             {
-                result[count++].PublishDate = DateTime.Parse(item.InnerText).ToLocalTime();
-            }
-            count = 0;
-            foreach (IXmlNode item in nodes)
-            {
-                result[count++].Author = "Autor: " + item.NextSibling.NextSibling.InnerText;
+                result[count].PublishDate = DateTime.Parse(item.InnerText).ToLocalTime();
+                result[count].Author = "Autor: " + item.NextSibling.NextSibling.InnerText;
+                count++;
             }
             return result;
+        }
+
+        /// <summary>
+        /// Serializez current Feed items to a json file.
+        /// </summary>
+        /// <param name="input">List of feed items</param>
+        public async static void SaveToLocal(List<Structure> input)
+        {
+            StorageFolder _localfolder = ApplicationData.Current.LocalFolder;
+            StorageFile _localfile = await _localfolder.CreateFileAsync("data.json",CreationCollisionOption.ReplaceExisting);
+            string json = JsonConvert.SerializeObject(input, Formatting.Indented);
+            await FileIO.WriteTextAsync(_localfile, json);
         }
     }
 }

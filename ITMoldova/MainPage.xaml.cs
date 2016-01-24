@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using ITMUtils.NewsParsing;
 using Windows.Storage;
+using Newtonsoft.Json;
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
 namespace ITMoldova
@@ -40,11 +41,15 @@ namespace ITMoldova
 
         private async void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
+            StorageFile _jsonfile = await ApplicationData.Current.LocalFolder.GetFileAsync("data.json");
+            string json = await FileIO.ReadTextAsync(_jsonfile);
+            List<Structure> _items = JsonConvert.DeserializeObject<List<Structure>>(json);
             if (News.Items.Count==0)
             {
-                News.ItemsSource = await Parser.GetFeedData();
+                News.ItemsSource = _items;
                 Loader.IsActive = false;
             }
+            Parser.SaveToLocal(_items);
         }
 
         private void MainPage_BackRequested(object sender, BackRequestedEventArgs e)
@@ -93,6 +98,12 @@ namespace ITMoldova
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             rootFrame.Navigate(typeof(SettingsPage));
+        }
+
+        private void SearchClicked(object sender,RoutedEventArgs e)
+        {
+            LogoText.Visibility = Visibility.Collapsed;
+            SearchBox.Visibility = Visibility.Visible;
         }
     }
 }

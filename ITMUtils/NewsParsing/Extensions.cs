@@ -14,17 +14,29 @@ namespace ITMUtils.NewsParsing
         /// <param name="InputList">Exensiion param</param>
         /// <param name="search">String to search</param>
         /// <returns></returns>
-        public static List<Structure> Search(this List<Structure> InputList,string search)
+        public static List<Structure> Search(this List<Structure> InputList, string search)
         {
             List<Structure> result = new List<Structure>();
             foreach (Structure item in InputList)
             {
-                if (item.Title.Contains(search)||item.Content.Contains(search))
+                if (item.Title.Contains(search) || item.Content.Contains(search))
                 {
                     result.Add(item);
                 }
             }
             return result;
+        }
+
+        /// <summary>
+        /// Verifies if there are new news online.
+        /// </summary>
+        /// <param name="InputList"></param>
+        /// <param name="OtherList"></param>
+        /// <returns></returns>
+        public static bool IsNew(this List<Structure> InputList, List<Structure> OtherList)
+        {
+            
+            return false;
         }
     }
 }
