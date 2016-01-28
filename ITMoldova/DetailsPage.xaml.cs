@@ -17,6 +17,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using System.Text.RegularExpressions;
+using Windows.Data.Html;
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace ITMoldova
@@ -36,13 +37,13 @@ namespace ITMoldova
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             Structure str = e.Parameter as Structure;
-            this.DataContext = str;
             string html = @"<html><head><link rel=""stylesheet"" href=""http://itmoldova.com/wp-content/themes/CarsRace2/lib/css/reset.css"" type=""text/css"" media=""screen, projection"">
 <link rel=""stylesheet"" href=""http://itmoldova.com/wp-content/themes/CarsRace2/lib/css/defaults.css"" type=""text/css"" media=""screen, projection"">
 <link rel=""stylesheet"" href=""http://itmoldova.com/wp-content/themes/CarsRace2/style.css"" type=""text/css"" media=""screen, projection""></head><body style=""padding:10px"">";
             html += str.EncodedString;
             html += "</body></html";
-            YTVideo.NavigateToString(html);
+            OutPut.Text = HtmlUtilities.ConvertToText(html);
+            //YTVideo.NavigateToString(html);
             //Description.Text = Regex.Replace(str.Content, "<.*?>", string.Empty);
             if (rootFrame.CanGoBack)
             {

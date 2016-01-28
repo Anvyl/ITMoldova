@@ -6,6 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.Data.Xml.Dom;
 using System.Text.RegularExpressions;
+using Windows.Storage;
+using Newtonsoft.Json;
+using Windows.UI.Popups;
 
 namespace ITMUtils.NewsParsing
 {
@@ -34,11 +37,11 @@ namespace ITMUtils.NewsParsing
             XmlNodeList nodes = xdoc.SelectNodes(TitlePath);
             foreach (IXmlNode item in nodes)
             {
-                result.Add(new Structure() { Title = item.InnerText});
+                result.Add(new Structure() { Title = item.InnerText });
             }
             Regex rgx = new Regex("src=\".+?\"");
             xdoc.LoadXml(xml);
-            nodes= xdoc.SelectNodes(DescriptionPath);
+            nodes = xdoc.SelectNodes(DescriptionPath);
             int count = 0;
             string text = string.Empty;
             foreach (IXmlNode item in nodes)

@@ -15,6 +15,9 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using ITMUtils.NewsParsing;
 using Windows.Storage;
+using Windows.UI.Popups;
+using Newtonsoft.Json;
+using Windows.UI.Xaml.Media.Animation;
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
 namespace ITMoldova
@@ -30,7 +33,15 @@ namespace ITMoldova
         {
             this.InitializeComponent();
             this.NavigationCacheMode = NavigationCacheMode.Enabled;
+            SearchBox.LostFocus += SearchBox_LostFocus;
             SystemNavigationManager.GetForCurrentView().BackRequested += MainPage_BackRequested;
+        }
+
+        private void SearchBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            SearchBox.Visibility = Visibility.Collapsed;
+            SearchBtn.Visibility = Visibility.Collapsed;
+            LogoText.Visibility = Visibility.Visible;
         }
 
         private void News_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -40,9 +51,10 @@ namespace ITMoldova
 
         private async void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
-            if (News.Items.Count==0)
+            List<Structure> _items = await Parser.GetFeedData();
+            if (News.Items.Count == 0)
             {
-                News.ItemsSource = await Parser.GetFeedData();
+                News.ItemsSource = _items;
                 Loader.IsActive = false;
             }
         }
@@ -94,6 +106,27 @@ namespace ITMoldova
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             rootFrame.Navigate(typeof(SettingsPage));
+        }
+
+        private void SearchClicked(object sender,RoutedEventArgs e)
+        {
+            SearchBox.Visibility = Visibility.Visible;
+            SearchBtn.Visibility = Visibility.Visible;
+            LogoText.Visibility = Visibility.Collapsed;
+            SearchBox.Focus(FocusState.Programmatic);
+        }
+
+        private async void SearchBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MessageDialog dlg = new MessageDialog("blea");
+            await dlg.ShowAsync();
+           
+
+        }
+
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

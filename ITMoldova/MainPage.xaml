@@ -141,6 +141,9 @@
             </Setter>
         </Style>
     </Page.Resources>
+    <Page.Transitions>
+        <TransitionCollection/>
+    </Page.Transitions>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid Margin="50,0,0,0">
@@ -151,8 +154,20 @@
             
             <ProgressRing Grid.Row="0" x:Name="Loader" IsActive="True" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center"/>
             <Image Source="http://itmoldova.com/wp-content/uploads/2015/01/power-itmold-54cb37e4v1_site_icon-32x32.png" Width="32" Height="32" HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Center" Grid.Row="0"></Image>
-            <TextBlock Text="ITMoldova" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20" FontWeight="Bold" Margin="40,0,0,0" FontFamily="{ThemeResource PhoneFontFamilyNormal}"/>
+            <TextBlock x:Name="LogoText" Text="ITMoldova" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20" FontWeight="Bold" Margin="40,0,0,0" FontFamily="{ThemeResource PhoneFontFamilyNormal}"/>
             <Rectangle Grid.Row="1" Fill="Black" Opacity="0.1"></Rectangle>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="50"/>
+                </Grid.ColumnDefinitions>
+                <TextBox Grid.Row="0" PlaceholderText="Search" Margin="40,0,0,0" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Center" Visibility="Collapsed" x:Name="SearchBox">
+                </TextBox>
+                <Button Click="SearchBtn_Click" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed" x:Name="SearchBtn">
+                    <SymbolIcon Symbol="Find">
+                    </SymbolIcon>
+                </Button>
+            </Grid>
             <ListView SelectionChanged="News_SelectionChanged" Grid.Row="1" x:Name="News">
                 <ListView.Transitions>
                     <TransitionCollection>
@@ -168,8 +183,10 @@
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
                                 <TextBlock Text="{Binding PublishDate}" Grid.Column="0" Margin="2,2.5,0,0" VerticalAlignment="Center" HorizontalAlignment="Left"></TextBlock>
+                                <RadioButton IsChecked="True" Grid.Column="0" HorizontalAlignment="Right"></RadioButton>
                                 <TextBlock Text="{Binding Author}" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,5,0"></TextBlock>
                             </Grid>
+                            
                             <Image Source="{Binding ImgSource}" Stretch="UniformToFill" Height="Auto" Margin="0,2.5,0.5,0" Width="Auto"></Image>
                             <TextBlock TextWrapping="Wrap" FontSize="18" Text="{Binding Title}" Margin="2,2.5,0,5" FontFamily="Verdana"></TextBlock>
                         </StackPanel>
@@ -211,6 +228,22 @@
                                 </StackPanel>
                             </Button>
                             <TextBlock Text="Save Locally" Foreground="White" HorizontalAlignment="Right" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Button Style="{StaticResource HamStyle}" Background="{StaticResource SystemControlBackgroundAccentBrush}" Width="50" Height="50" Click="SearchClicked">
+                                <StackPanel Orientation="Horizontal">
+                                    <SymbolIcon Symbol="Find" Foreground="White"/>
+                                </StackPanel>
+                            </Button>
+                            <TextBlock Text="Search" Foreground="White" HorizontalAlignment="Right" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Button Style="{StaticResource HamStyle}" Background="{StaticResource SystemControlBackgroundAccentBrush}" Width="50" Height="50" Click="SearchClicked">
+                                <StackPanel Orientation="Horizontal">
+                                    <SymbolIcon Symbol="Favorite" Foreground="White"/>
+                                </StackPanel>
+                            </Button>
+                            <TextBlock Text="Favourites" Foreground="White" HorizontalAlignment="Right" Margin="10,0,0,0" VerticalAlignment="Center"/>
                         </StackPanel>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom">

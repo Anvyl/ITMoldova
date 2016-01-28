@@ -9,6 +9,9 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <WebView x:Name="YTVideo" Margin="0,0,0,0"></WebView>
+        <!--<WebView x:Name="YTVideo" Margin="0,0,0,0"></WebView>-->
+        <ScrollViewer>
+            <TextBlock TextWrapping="Wrap" x:Name="OutPut"></TextBlock>
+        </ScrollViewer>
     </Grid>
 </Page>

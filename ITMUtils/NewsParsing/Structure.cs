@@ -51,12 +51,13 @@ namespace ITMUtils.NewsParsing
         /// <returns></returns>
         public bool Equals(Structure other)
         {
-            if (this.Title==other.Title && this.EncodedString==other.EncodedString)
+            if (other==null)
             {
-                return true;
+                return false;
             }
-            return false;
+            return this.Title.Equals(other.Title) && this.EncodedString.Equals(other.EncodedString) && this.Content.Equals(other.Content);
         }
 
+       
     }
 }
