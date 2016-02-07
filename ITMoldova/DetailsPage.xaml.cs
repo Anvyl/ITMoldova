@@ -42,8 +42,7 @@ namespace ITMoldova
 <link rel=""stylesheet"" href=""http://itmoldova.com/wp-content/themes/CarsRace2/style.css"" type=""text/css"" media=""screen, projection""></head><body style=""padding:10px"">";
             html += str.EncodedString;
             html += "</body></html";
-            OutPut.Text = HtmlUtilities.ConvertToText(html);
-            //YTVideo.NavigateToString(html);
+            YTVideo.NavigateToString(html);
             //Description.Text = Regex.Replace(str.Content, "<.*?>", string.Empty);
             if (rootFrame.CanGoBack)
             {

@@ -39,9 +39,12 @@ namespace ITMoldova
 
         private void SearchBox_LostFocus(object sender, RoutedEventArgs e)
         {
-            SearchBox.Visibility = Visibility.Collapsed;
-            SearchBtn.Visibility = Visibility.Collapsed;
-            LogoText.Visibility = Visibility.Visible;
+            if (SearchBox.Text.Length==0)
+            {
+                SearchBox.Visibility = Visibility.Collapsed;
+                SearchBtn.Visibility = Visibility.Collapsed;
+                LogoText.Visibility = Visibility.Visible;
+            }
         }
 
         private void News_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -82,7 +85,6 @@ namespace ITMoldova
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
             Loader.IsActive = true;
-            
             News.ItemsSource = await Parser.GetFeedData();
             Loader.IsActive = false;
         }
@@ -108,7 +110,7 @@ namespace ITMoldova
             rootFrame.Navigate(typeof(SettingsPage));
         }
 
-        private void SearchClicked(object sender,RoutedEventArgs e)
+        private void SearchClicked(object sender, RoutedEventArgs e)
         {
             SearchBox.Visibility = Visibility.Visible;
             SearchBtn.Visibility = Visibility.Visible;
@@ -120,8 +122,6 @@ namespace ITMoldova
         {
             MessageDialog dlg = new MessageDialog("blea");
             await dlg.ShowAsync();
-           
-
         }
 
         private void RadioButton_Checked(object sender, RoutedEventArgs e)

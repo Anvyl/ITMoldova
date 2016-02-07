@@ -183,7 +183,6 @@
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
                                 <TextBlock Text="{Binding PublishDate}" Grid.Column="0" Margin="2,2.5,0,0" VerticalAlignment="Center" HorizontalAlignment="Left"></TextBlock>
-                                <RadioButton IsChecked="True" Grid.Column="0" HorizontalAlignment="Right"></RadioButton>
                                 <TextBlock Text="{Binding Author}" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,5,0"></TextBlock>
                             </Grid>
                             
@@ -213,9 +212,9 @@
                         <StackPanel Orientation="Horizontal">
                             <Button
                             Background="{StaticResource SystemControlBackgroundAccentBrush}" 
-                            Width="150" 
+                            Width="200" 
                             Height="50" Click="Button_Click" Style="{StaticResource MenuButton}">
-                                <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                                <StackPanel HorizontalAlignment="Left" Margin="-50,0,0,0" Orientation="Horizontal">
                                     <SymbolIcon HorizontalAlignment="Left" Symbol="Refresh" Foreground="White"/>
                                     <TextBlock Text="Refresh" Foreground="White" HorizontalAlignment="Right" Margin="20,0,0,0" VerticalAlignment="Center"/>
                                 </StackPanel>
