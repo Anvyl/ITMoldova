@@ -14,10 +14,10 @@ namespace ITMUtils.NewsParsing
         /// <param name="InputList">Exensiion param</param>
         /// <param name="search">String to search</param>
         /// <returns></returns>
-        public static List<Structure> Search(this List<Structure> InputList,string search)
+        public static List<NewsStruct> Search(this List<NewsStruct> InputList,string search)
         {
-            List<Structure> result = new List<Structure>();
-            foreach (Structure item in InputList)
+            List<NewsStruct> result = new List<NewsStruct>();
+            foreach (NewsStruct item in InputList)
             {
                 if (item.Title.Contains(search)||item.Content.Contains(search))
                 {
@@ -26,7 +26,5 @@ namespace ITMUtils.NewsParsing
             }
             return result;
         }
-
-
     }
 }

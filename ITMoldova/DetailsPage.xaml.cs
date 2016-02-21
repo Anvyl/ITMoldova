@@ -36,7 +36,7 @@ namespace ITMoldova
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            Structure str = e.Parameter as Structure;
+            NewsStruct str = e.Parameter as NewsStruct;
             string html = @"<html><head><link rel=""stylesheet"" href=""http://itmoldova.com/wp-content/themes/CarsRace2/lib/css/reset.css"" type=""text/css"" media=""screen, projection"">
 <link rel=""stylesheet"" href=""http://itmoldova.com/wp-content/themes/CarsRace2/lib/css/defaults.css"" type=""text/css"" media=""screen, projection"">
 <link rel=""stylesheet"" href=""http://itmoldova.com/wp-content/themes/CarsRace2/style.css"" type=""text/css"" media=""screen, projection""></head><body style=""padding:10px"">";

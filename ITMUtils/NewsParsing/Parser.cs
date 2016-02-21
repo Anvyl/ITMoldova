@@ -24,12 +24,12 @@ namespace ITMUtils.NewsParsing
         private static string PublishDatePath = ItemPath + "/pubDate";
 
         /// <summary>
-        /// Get all feed data with a structure according to <see cref="ITMUtils.NewsParsing.Structure" />
+        /// Get all feed data with a structure according to <see cref="ITMUtils.NewsParsing.NewsStruct" />
         /// </summary>
         /// <returns>All feed data into a <see cref="List{Structure}"/> format</returns>
-        public async static Task<List<Structure>> GetFeedData()
+        public async static Task<List<NewsStruct>> GetFeedData()
         {
-            List<Structure> result = new List<Structure>();
+            List<NewsStruct> result = new List<NewsStruct>();
             HttpClient client = new HttpClient();
             string xml = await client.GetStringAsync(SourceUrl);
             XmlDocument xdoc = new XmlDocument();
@@ -37,7 +37,7 @@ namespace ITMUtils.NewsParsing
             XmlNodeList nodes = xdoc.SelectNodes(TitlePath);
             foreach (IXmlNode item in nodes)
             {
-                result.Add(new Structure() { Title = item.InnerText });
+                result.Add(new NewsStruct() { Title = item.InnerText });
             }
             Regex rgx = new Regex("src=\".+?\"");
             xdoc.LoadXml(xml);

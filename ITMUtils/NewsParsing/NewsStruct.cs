@@ -9,7 +9,7 @@ namespace ITMUtils.NewsParsing
     /// <summary>
     /// Structure of our Feed Item.
     /// </summary>
-    public class Structure:IEquatable<Structure>
+    public class NewsStruct:IEquatable<NewsStruct>
     {
         /// <summary>
         /// Field that holds the id for the item used for local storing indexation.
@@ -49,7 +49,7 @@ namespace ITMUtils.NewsParsing
         /// </summary>
         /// <param name="other"></param>
         /// <returns></returns>
-        public bool Equals(Structure other)
+        public bool Equals(NewsStruct other)
         {
             if (other==null)
             {
@@ -57,7 +57,5 @@ namespace ITMUtils.NewsParsing
             }
             return this.Title.Equals(other.Title) && this.EncodedString.Equals(other.EncodedString) && this.Content.Equals(other.Content);
         }
-
-       
     }
 }

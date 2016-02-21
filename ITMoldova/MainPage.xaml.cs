@@ -49,12 +49,12 @@ namespace ITMoldova
 
         private void News_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            rootFrame.Navigate(typeof(DetailsPage), (sender as ListView).SelectedItem as Structure);
+            rootFrame.Navigate(typeof(DetailsPage), (sender as ListView).SelectedItem as NewsStruct);
         }
 
         private async void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
-            List<Structure> _items = await Parser.GetFeedData();
+            List<NewsStruct> _items = await Parser.GetFeedData();
             if (News.Items.Count == 0)
             {
                 News.ItemsSource = _items;

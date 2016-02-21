@@ -105,12 +105,13 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <None Include="NewsParsingModel.cd" />
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="NewsParsing\Extensions.cs" />
     <Compile Include="NewsParsing\Parser.cs" />
-    <Compile Include="NewsParsing\Structure.cs" />
+    <Compile Include="NewsParsing\NewsStruct.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\ITMUtils.rd.xml" />
   </ItemGroup>
