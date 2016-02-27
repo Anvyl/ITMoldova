@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace ITMUtils.NewsParsing
 {
-    internal static class Extensions
+    public static class Extensions
     {
+
         /// <summary>
         /// Search through the collection of Structure items and return the results.
         /// </summary>
-        /// <param name="InputList">Exensiion param</param>
+        /// <param name="InputList">Extension param</param>
         /// <param name="search">String to search</param>
         /// <returns></returns>
         public static List<NewsStruct> Search(this List<NewsStruct> InputList,string search)

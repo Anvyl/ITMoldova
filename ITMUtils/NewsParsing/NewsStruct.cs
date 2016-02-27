@@ -9,7 +9,7 @@ namespace ITMUtils.NewsParsing
     /// <summary>
     /// Structure of our Feed Item.
     /// </summary>
-    public class NewsStruct:IEquatable<NewsStruct>
+    public class NewsStruct : IEquatable<NewsStruct>
     {
         /// <summary>
         /// Field that holds the id for the item used for local storing indexation.
@@ -34,7 +34,7 @@ namespace ITMUtils.NewsParsing
         /// <summary>
         /// The Publish Date of the current Feed Item.
         /// </summary>
-        public DateTime PublishDate { get; set;}
+        public DateTime PublishDate { get; set; }
         /// <summary>
         /// The Author of the Feed Item
         /// </summary>
@@ -51,7 +51,7 @@ namespace ITMUtils.NewsParsing
         /// <returns></returns>
         public bool Equals(NewsStruct other)
         {
-            if (other==null)
+            if (other == null)
             {
                 return false;
             }
