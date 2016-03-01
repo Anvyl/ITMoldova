@@ -8,7 +8,6 @@ namespace ITMUtils.NewsParsing
 {
     public static class Extensions
     {
-
         /// <summary>
         /// Search through the collection of Structure items and return the results.
         /// </summary>
@@ -25,7 +24,6 @@ namespace ITMUtils.NewsParsing
                     result.Add(item);
                 }
             }
-            //heh
             return result;
         }
     }
