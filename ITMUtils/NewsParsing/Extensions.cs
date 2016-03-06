@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace ITMUtils.NewsParsing
 {
+    /// <summary>
+    /// Custom extension methods for our news collection.
+    /// </summary>
     public static class Extensions
     {
         /// <summary>
