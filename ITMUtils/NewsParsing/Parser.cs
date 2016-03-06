@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 using Windows.Data.Xml.Dom;
 using System.Text.RegularExpressions;
-using Windows.Storage;
-using Newtonsoft.Json;
-using Windows.UI.Popups;
+using System.Linq;
+using System.Collections.ObjectModel;
 
 namespace ITMUtils.NewsParsing
 {
@@ -22,7 +19,7 @@ namespace ITMUtils.NewsParsing
         private static string TitlePath = ItemPath + "/title";
         private static string DescriptionPath = ItemPath + "/description";
         private static string PublishDatePath = ItemPath + "/pubDate";
-
+        
         /// <summary>
         /// Get all feed data with a structure according to <see cref="ITMUtils.NewsParsing.NewsStruct" />
         /// </summary>

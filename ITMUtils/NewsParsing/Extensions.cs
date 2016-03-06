@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace ITMUtils.NewsParsing
 {
+    /// <summary>
+    /// Custom extension methods for our News library.
+    /// </summary>
     public static class Extensions
     {
         /// <summary>
