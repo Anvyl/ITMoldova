@@ -1,14 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 using Windows.Data.Xml.Dom;
 using System.Text.RegularExpressions;
-using Windows.Storage;
-using Newtonsoft.Json;
-using Windows.UI.Popups;
 
 namespace ITMUtils.NewsParsing
 {
