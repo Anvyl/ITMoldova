@@ -42,10 +42,10 @@ namespace ITMoldova
 
         private async void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
-            List<NewsStruct> _items = await Parser.GetFeedData();
+            List<NewsStruct> items = await Parser.GetFeedData();
             if (News.Items.Count == 0)
             {
-                News.ItemsSource = _items;
+                News.ItemsSource = items;
                 Loader.IsActive = false;
             }
         }

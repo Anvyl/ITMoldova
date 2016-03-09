@@ -4,6 +4,11 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using Windows.Data.Xml.Dom;
 using System.Text.RegularExpressions;
+<<<<<<< HEAD
+using System.Linq;
+using System.Collections.ObjectModel;
+=======
+>>>>>>> refs/remotes/origin/master
 
 namespace ITMUtils.NewsParsing
 {
@@ -17,7 +22,7 @@ namespace ITMUtils.NewsParsing
         private static string TitlePath = ItemPath + "/title";
         private static string DescriptionPath = ItemPath + "/description";
         private static string PublishDatePath = ItemPath + "/pubDate";
-
+        
         /// <summary>
         /// Get all feed data with a structure according to <see cref="ITMUtils.NewsParsing.NewsStruct" />
         /// </summary>
