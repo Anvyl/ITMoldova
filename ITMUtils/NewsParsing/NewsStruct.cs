@@ -48,9 +48,7 @@ namespace ITMUtils.NewsParsing
         public bool Equals(NewsStruct other)
         {
             if (other == null)
-            {
                 return false;
-            }
             return this.Title.Equals(other.Title) && this.EncodedString.Equals(other.EncodedString) && this.Content.Equals(other.Content);
         }
     }

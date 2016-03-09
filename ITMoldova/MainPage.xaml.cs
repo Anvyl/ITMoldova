@@ -53,12 +53,9 @@ namespace ITMoldova
         private void MainPage_BackRequested(object sender, BackRequestedEventArgs e)
         {
             Frame rootFrame = Window.Current.Content as Frame;
-            if (rootFrame==null)
-            {
+            if (rootFrame == null)
                 return;
-            }
-
-            if (rootFrame.CanGoBack && e.Handled==false)
+            if (rootFrame.CanGoBack && e.Handled == false)
             {
                 e.Handled = true;
                 rootFrame.GoBack();
@@ -79,18 +76,12 @@ namespace ITMoldova
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            if (News.Items.Count>0)
-            {
+            if (News.Items.Count > 0)
                 News.SelectedItem = null;
-            }
             if (rootFrame.CanGoBack)
-            {
                 SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
-            }
             else
-            {
                 SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = AppViewBackButtonVisibility.Collapsed;
-            }
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -110,11 +101,6 @@ namespace ITMoldova
         {
             MessageDialog dlg = new MessageDialog("blea");
             await dlg.ShowAsync();
-        }
-
-        private void RadioButton_Checked(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }
