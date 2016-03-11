@@ -6,6 +6,7 @@ using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 using ITMUtils.NewsParsing;
 using Windows.UI.Popups;
+using System.Collections.ObjectModel;
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
 namespace ITMoldova
@@ -16,7 +17,7 @@ namespace ITMoldova
     public sealed partial class MainPage : Page
     {
         Frame rootFrame = Window.Current.Content as Frame;
-        
+
         public MainPage()
         {
             this.InitializeComponent();
@@ -27,7 +28,7 @@ namespace ITMoldova
 
         private void SearchBox_LostFocus(object sender, RoutedEventArgs e)
         {
-            if (SearchBox.Text.Length==0)
+            if (SearchBox.Text.Length == 0)
             {
                 SearchBox.Visibility = Visibility.Collapsed;
                 SearchBtn.Visibility = Visibility.Collapsed;
@@ -42,7 +43,7 @@ namespace ITMoldova
 
         private async void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
-            List<NewsStruct> items = await Parser.GetFeedData();
+            ObservableCollection<NewsStruct> items = await Parser.GetFeedData();
             if (News.Items.Count == 0)
             {
                 News.ItemsSource = items;

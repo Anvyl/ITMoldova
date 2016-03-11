@@ -3,11 +3,7 @@
 namespace ITMUtils.NewsParsing
 {
     /// <summary>
-<<<<<<< HEAD
     /// Custom extension methods for our News library.
-=======
-    /// Custom extension methods for our news collection.
->>>>>>> refs/remotes/origin/master
     /// </summary>
     public static class Extensions
     {
