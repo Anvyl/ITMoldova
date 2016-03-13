@@ -4,11 +4,9 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using Windows.Data.Xml.Dom;
 using System.Text.RegularExpressions;
-<<<<<<< HEAD
 using System.Linq;
 using System.Collections.ObjectModel;
-=======
->>>>>>> refs/remotes/origin/master
+
 
 namespace ITMUtils.NewsParsing
 {

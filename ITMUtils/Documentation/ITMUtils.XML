@@ -4,6 +4,12 @@
         <name>ITMUtils</name>
     </assembly>
     <members>
+        <member name="T:ITMUtils.NewsParsing.Extensions">
+            <summary>
+            Custom extension methods for our News library.
+            Custom extension methods for our news collection.
+            </summary>
+        </member>
         <member name="M:ITMUtils.NewsParsing.Extensions.Search(System.Collections.Generic.List{ITMUtils.NewsParsing.NewsStruct},System.String)">
             <summary>
             Search through the collection of Structure items and return the results.
