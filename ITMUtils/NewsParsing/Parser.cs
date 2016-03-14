@@ -25,9 +25,9 @@ namespace ITMUtils.NewsParsing
         /// Get all feed data with a structure according to <see cref="ITMUtils.NewsParsing.NewsStruct" />
         /// </summary>
         /// <returns>All feed data into a <see cref="List{Structure}"/> format</returns>
-        public async static Task<List<NewsStruct>> GetFeedData()
+        public async static Task<ObservableCollection<NewsStruct>> GetFeedData()
         {
-            List<NewsStruct> result = new List<NewsStruct>();
+            ObservableCollection<NewsStruct> result = new ObservableCollection<NewsStruct>();
             HttpClient client = new HttpClient();
             string xml = await client.GetStringAsync(SourceUrl);
             XmlDocument xdoc = new XmlDocument();
