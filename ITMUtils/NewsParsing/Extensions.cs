@@ -4,6 +4,7 @@ namespace ITMUtils.NewsParsing
 {
     /// <summary>
     /// Custom extension methods for our News library.
+    /// Custom extension methods for our news collection.
     /// </summary>
     public static class Extensions
     {

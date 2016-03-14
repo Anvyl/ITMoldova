@@ -4,7 +4,9 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using Windows.Data.Xml.Dom;
 using System.Text.RegularExpressions;
+using System.Linq;
 using System.Collections.ObjectModel;
+
 
 namespace ITMUtils.NewsParsing
 {

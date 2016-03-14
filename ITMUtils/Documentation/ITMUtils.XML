@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ITMUtils</name>
+    </assembly>
+    <members>
+        <member name="T:ITMUtils.NewsParsing.Extensions">
+            <summary>
+            Custom extension methods for our News library.
+            Custom extension methods for our news collection.
+            </summary>
+        </member>
+        <member name="M:ITMUtils.NewsParsing.Extensions.Search(System.Collections.Generic.List{ITMUtils.NewsParsing.NewsStruct},System.String)">
+            <summary>
+            Search through the collection of Structure items and return the results.
+            </summary>
+            <param name="InputList">Extension param</param>
+            <param name="search">String to search</param>
+            <returns></returns>
+        </member>
+        <member name="T:ITMUtils.NewsParsing.Parser">
+            <summary>
+            Parses the information from the feed xml. 
+            </summary>
+        </member>
+        <member name="M:ITMUtils.NewsParsing.Parser.GetFeedData">
+            <summary>
+            Get all feed data with a structure according to <see cref="T:ITMUtils.NewsParsing.NewsStruct" />
+            </summary>
+            <returns>All feed data into a <see cref="T:System.Collections.Generic.List`1"/> format</returns>
+        </member>
+        <member name="T:ITMUtils.NewsParsing.NewsStruct">
+            <summary>
+            Structure of our Feed Item.
+            </summary>
+        </member>
+        <member name="P:ITMUtils.NewsParsing.NewsStruct.id">
+            <summary>
+            Field that holds the id for the item used for local storing indexation.
+            </summary>
+        </member>
+        <member name="P:ITMUtils.NewsParsing.NewsStruct.Title">
+            <summary>
+            Feed Item Title.
+            </summary>
+        </member>
+        <member name="P:ITMUtils.NewsParsing.NewsStruct.ImgSource">
+            <summary>
+            First found image url in the <see cref="P:ITMUtils.NewsParsing.NewsStruct.EncodedString"/>
+            </summary>
+        </member>
+        <member name="P:ITMUtils.NewsParsing.NewsStruct.Content">
+            <summary>
+            Clear content of the feed item with no html tag.
+            </summary>
+        </member>
+        <member name="P:ITMUtils.NewsParsing.NewsStruct.EncodedString">
+            <summary>
+            Feed Item content with html tags.
+            </summary>
+        </member>
+        <member name="P:ITMUtils.NewsParsing.NewsStruct.PublishDate">
+            <summary>
+            The Publish Date of the current Feed Item.
+            </summary>
+        </member>
+        <member name="P:ITMUtils.NewsParsing.NewsStruct.Author">
+            <summary>
+            The Author of the Feed Item
+            </summary>
+        </member>
+        <member name="P:ITMUtils.NewsParsing.NewsStruct.Category">
+            <summary>
+            Feed Item category.
+            </summary>
+        </member>
+        <member name="M:ITMUtils.NewsParsing.NewsStruct.Equals(ITMUtils.NewsParsing.NewsStruct)">
+            <summary>
+            Check if current Feed Item is equal with another.
+            </summary>
+            <param name="other"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
