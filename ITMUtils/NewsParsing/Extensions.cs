@@ -18,12 +18,8 @@ namespace ITMUtils.NewsParsing
         {
             List<NewsStruct> result = new List<NewsStruct>();
             foreach (NewsStruct item in InputList)
-            {
-                if (item.Title.Contains(search)||item.Content.Contains(search))
-                {
+                if (item.Title.Contains(search) || item.Content.Contains(search))
                     result.Add(item);
-                }
-            }
             return result;
         }
     }
